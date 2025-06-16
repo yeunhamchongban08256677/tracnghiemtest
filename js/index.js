@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // State
     let customQuizData = null;
-    const GEMINI_API_KEY = ""; // Provided by the environment
+    const GEMINI_API_KEY = "AIzaSyDsam8ff9YcDceKH5SOCxvd2oVZFi7uXVk"; // Provided by the environment
 
     // --- Core Functions ---
 
