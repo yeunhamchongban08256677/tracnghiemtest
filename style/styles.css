@@ -1,0 +1,230 @@
+/* --- General Styling & Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1rem;
+    color: #333;
+}
+
+/* --- Main Layout & Card --- */
+.app-container {
+    width: 100%;
+    max-width: 72rem; /* max-w-7xl */
+    margin: auto;
+}
+
+.card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
+}
+
+/* --- Buttons --- */
+.btn {
+    font-weight: 700;
+    padding: 0.8rem 1.6rem;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+.btn-primary {
+    background-color: #007aff;
+    color: white;
+}
+.btn-primary:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+.btn-secondary:hover:not(:disabled) {
+    background-color: #5a6268;
+}
+.btn-success {
+    background-color: #28a745;
+    color: white;
+}
+.btn-success:hover:not(:disabled) {
+    background-color: #218838;
+}
+.btn-outline {
+    background-color: transparent;
+    color: #007aff;
+    border-color: #007aff;
+}
+.btn-outline:hover:not(:disabled) {
+    background-color: #f0f8ff;
+}
+
+/* --- Answer Button Specifics --- */
+.answer-btn {
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    font-weight: 500;
+}
+.answer-btn:hover:not(:disabled) {
+    border-color: #007aff;
+    background-color: #f0f8ff;
+    transform: translateY(-2px);
+}
+.answer-btn.correct {
+    background-color: #28a745 !important;
+    color: white !important;
+    border-color: #218838 !important;
+}
+.answer-btn.incorrect {
+    background-color: #dc3545 !important;
+    color: white !important;
+    border-color: #c82333 !important;
+}
+
+/* --- File Upload --- */
+.file-upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 9rem;
+    border: 2px dashed #adb5bd;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #f8f9fa;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+.file-upload-label:hover {
+    background-color: #e9ecef;
+    border-color: #007aff;
+}
+
+/* --- Controls & Settings --- */
+.control-panel-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+.control-panel input[type="number"] {
+    width: 4rem;
+    text-align: right;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+}
+.control-panel input[type="checkbox"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    cursor: pointer;
+    accent-color: #007aff;
+}
+
+/* --- Loader --- */
+.loader {
+    border: 4px solid #e9ecef;
+    border-radius: 50%;
+    border-top: 4px solid #007aff;
+    width: 24px;
+    height: 24px;
+    animation: spin 1.5s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- Modal for Preview --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 50rem;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+}
+.modal-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #e9ecef;
+    border: none;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#preview-list .question-item {
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+#preview-list .question-item:last-child {
+    border-bottom: none;
+}
+#preview-list h4 {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+#preview-list ul {
+    list-style-position: inside;
+    padding-left: 0.5rem;
+}
+#preview-list li.correct-answer {
+    color: #28a745;
+    font-weight: 500;
+}
+
+
+/* --- Utility Classes --- */
+.hidden {
+    display: none !important;
+}

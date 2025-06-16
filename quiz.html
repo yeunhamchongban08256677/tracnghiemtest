@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ôn Luyện Trắc Nghiệm - Đang Thi</title>
+    <link rel="stylesheet" href="style/styles.css">
+</head>
+<body>
+    <div id="app-container" class="w-full max-w-6xl mx-auto">
+        <div id="main-quiz-layout" class="hidden md:grid md:grid-cols-3 md:gap-8">
+             <div id="quiz-screen" class="md:col-span-2 card">
+                 <div class="flex justify-between items-center mb-4">
+                    <div id="progress-text" class="text-sm font-semibold text-gray-500">Câu 1/0</div>
+                    <div id="mastery-progress" class="text-sm font-semibold text-blue-700">Đã thuộc: 0/0</div>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5 mb-6">
+                    <div id="progress-bar" class="bg-blue-600 h-2.5 rounded-full transition-all duration-500" style="width: 0%"></div>
+                </div>
+                
+                <h2 id="question-text" class="text-xl md:text-2xl font-bold mb-6 min-h-[100px]">Đang tải câu hỏi...</h2>
+                
+                <div id="answer-buttons" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+
+                <div id="feedback" class="mt-6 text-center font-bold min-h-[28px]"></div>
+
+                <div class="mt-6 flex justify-end">
+                    <button id="next-btn" class="btn btn-success hidden">Câu Tiếp Theo</button>
+                </div>
+            </div>
+
+            <!-- Control Panel on the right -->
+            <div class="md:col-span-1 mt-8 md:mt-0">
+                 <div class="sticky top-8 card space-y-4">
+                    <h3 class="text-xl font-bold text-center mb-4 text-gray-700">Tiến độ & Điều khiển</h3>
+                    <div class="space-y-2 text-sm">
+                        <p><strong>Trạng thái:</strong> <span id="mastery-status" class="font-semibold text-blue-700">Đang học...</span></p>
+                        <p><strong>Số lần đúng yêu cầu:</strong> <span id="req-correct-count" class="font-semibold">3</span></p>
+                        <p><strong>Câu hỏi đã thuộc:</strong> <span id="mastered-count" class="font-semibold">0</span></p>
+                        <p><strong>Tổng số câu hỏi:</strong> <span id="total-q-count" class="font-semibold">0</span></p>
+                    </div>
+                    <div class="border-t pt-4 space-y-3">
+                         <button id="restart-quiz-btn" class="btn btn-primary w-full">Làm Lại Từ Đầu</button>
+                         <a href="index.html" class="btn btn-secondary w-full block">Trang Chủ & Tải Đề Khác</a>
+                    </div>
+                 </div>
+            </div>
+        </div>
+
+        <div id="end-screen" class="hidden card text-center max-w-lg mx-auto">
+            <h1 class="text-3xl font-bold text-green-600 mb-4">Hoàn Thành!</h1>
+            <p class="text-lg text-gray-700 mb-6">Bạn đã hoàn thành xuất sắc tất cả các câu hỏi!</p>
+            <p id="end-screen-stats" class="mb-8"></p>
+            <div class="flex justify-center gap-4">
+                <button id="restart-btn-end" class="btn btn-primary">Ôn Lại Từ Đầu</button>
+                <a href="index.html" class="btn btn-secondary">Về Trang Chủ</a>
+            </div>
+        </div>
+    </div>
+    <script src="js/quiz.js" defer></script>
+</body>
+</html>
